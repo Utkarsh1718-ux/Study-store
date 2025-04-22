@@ -1,6 +1,4 @@
 import React from "react";
-import { Card, CardContent } from "@mui/material";
-import { Button } from "@mui/material";
 
 const products = [
   {
@@ -29,16 +27,16 @@ function App() {
       <h1 style={{ textAlign: "center", fontSize: "2.5rem", marginBottom: "20px" }}>Study Store</h1>
       <div style={{ display: "grid", gap: "20px", gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))" }}>
         {products.map((product) => (
-          <Card key={product.id} style={{ backgroundColor: "#424242", color: "#fff" }}>
-            <CardContent>
-              <h2 style={{ fontSize: "1.5rem", fontWeight: "bold" }}>{product.title}</h2>
-              <p style={{ fontSize: "1rem", color: "#b0b0b0" }}>{product.description}</p>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontSize: "1.25rem", fontWeight: "bold" }}>{product.price}</span>
-                <Button variant="contained" style={{ backgroundColor: "#6200ea", color: "#fff" }}>Buy Now</Button>
-              </div>
-            </CardContent>
-          </Card>
+          <div key={product.id} style={{ backgroundColor: "#424242", padding: "20px", borderRadius: "12px" }}>
+            <h2 style={{ fontSize: "1.5rem", fontWeight: "bold" }}>{product.title}</h2>
+            <p style={{ fontSize: "1rem", color: "#b0b0b0" }}>{product.description}</p>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "10px" }}>
+              <span style={{ fontSize: "1.25rem", fontWeight: "bold" }}>{product.price}</span>
+              <button style={{ padding: "8px 16px", backgroundColor: "#6200ea", color: "#fff", border: "none", borderRadius: "6px" }}>
+                Buy Now
+              </button>
+            </div>
+          </div>
         ))}
       </div>
     </div>
